@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pompiers de Paris - Sauver ou Périr</title>
+    <meta name="description" content="Site officiel fictif de la Brigade de Sapeurs-Pompiers de Paris. Découvrez notre histoire, nos missions et notre boutique officielle.">
+    <meta name="keywords" content="BSPP, Pompiers Paris, Boutique Pompier, Histoire BSPP, Secours">
+    <meta name="author" content="BSPP Digital">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pompiers de Paris - Sauver ou Périr">
+    <meta property="og:description" content="Découvrez l'univers de la Brigade de Sapeurs-Pompiers de Paris.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1555616635-64018d390a5e?q=80&w=1200">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind & Lucide -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1555616635-64018d390a5e?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 font-bold text-xl tracking-wider hover:text-red-500 transition">
+                    <i data-lucide="flame" class="text-red-600 fill-red-600"></i>
+                    BSPP
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-red-500 font-semibold">Accueil</a>
+                    <a href="boutique.html" class="hover:text-red-500 transition">Boutique</a>
+                    <a href="histoire.html" class="hover:text-red-500 transition">Histoire</a>
+                    <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="boutique.html" class="relative group">
+                        <i data-lucide="shopping-bag" class="w-6 h-6 cart-icon-anim transition duration-300"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                    <a href="admin/login.html" class="text-gray-400 hover:text-white" title="Administration">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
+            <a href="index.html" class="block py-3 px-4 text-red-500 font-semibold">Accueil</a>
+            <a href="boutique.html" class="block py-3 px-4 hover:bg-slate-700 hover:text-red-500">Boutique</a>
+            <a href="histoire.html" class="block py-3 px-4 hover:bg-slate-700 hover:text-red-500">Histoire</a>
+            <a href="contact.html" class="block py-3 px-4 hover:bg-slate-700 hover:text-red-500">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-[600px] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 uppercase tracking-tight">
+                Sauver ou <span class="text-red-600">Périr</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 text-gray-200 font-light max-w-2xl mx-auto">
+                L'engagement d'une vie au service des autres. Découvrez l'élite des sapeurs-pompiers.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="boutique.html" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-lg transform hover:scale-105 transition duration-300 flex items-center justify-center gap-2">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    Accéder à la Boutique
+                </a>
+                <a href="histoire.html" class="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold rounded-lg shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                    Notre Histoire
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Universes Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12 uppercase border-b-4 border-red-600 w-24 mx-auto pb-2">Nos Univers</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599831932975-523190897d2e?q=80&w=600" alt="Interventions" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-red-600">
+                            <i data-lucide="siren" class="w-6 h-6"></i>
+                            <h3 class="font-bold text-xl">Interventions</h3>
+                        </div>
+                        <p class="text-gray-600">Au cœur de l'action, 24h/24 et 7j/7, pour porter secours aux victimes et protéger les biens.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1625246333333-659779313936?q=80&w=600" alt="Équipements" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-red-600">
+                            <i data-lucide="truck" class="w-6 h-6"></i>
+                            <h3 class="font-bold text-xl">Équipements</h3>
+                        </div>
+                        <p class="text-gray-600">Des technologies de pointe et des véhicules adaptés aux milieux urbains complexes.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542359649-31e03cd4d909?q=80&w=600" alt="Traditions" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-red-600">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                            <h3 class="font-bold text-xl">Traditions</h3>
+                        </div>
+                        <p class="text-gray-600">Un héritage militaire fort, des valeurs d'honneur et de dévouement transmises depuis 1811.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 bg-slate-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12 uppercase">Témoignages</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Une réactivité exemplaire lors de leur intervention chez moi. Merci pour votre professionnalisme."</p>
+                    <p class="font-bold text-slate-900">- Pierre D.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"La boutique est top ! J'ai reçu mon t-shirt BSPP rapidement, la qualité est superbe."</p>
+                    <p class="font-bold text-slate-900">- Sophie M.</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Fier de soutenir nos pompiers. Le site est clair et moderne. Bravo !"</p>
+                    <p class="font-bold text-slate-900">- Lucas V.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-10 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <a href="#" class="flex items-center gap-2 font-bold text-xl text-white mb-4">
+                    <i data-lucide="flame" class="text-red-600 fill-red-600"></i>
+                    BSPP
+                </a>
+                <p class="text-sm">Brigade de Sapeurs-Pompiers de Paris.<br>Sauver ou Périr.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Navigation</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-red-500">Accueil</a></li>
+                    <li><a href="boutique.html" class="hover:text-red-500">Boutique</a></li>
+                    <li><a href="histoire.html" class="hover:text-red-500">Histoire</a></li>
+                    <li><a href="contact.html" class="hover:text-red-500">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Légal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-red-500">Mentions légales</a></li>
+                    <li><a href="#" class="hover:text-red-500">Confidentialité</a></li>
+                    <li><a href="#" class="hover:text-red-500">CGV</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Suivez-nous</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-10 pt-4 border-t border-slate-800">
+            &copy; 2025 BSPP (Projet Fictif). Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

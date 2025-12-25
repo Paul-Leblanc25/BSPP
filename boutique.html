@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Officielle - Pompiers de Paris</title>
+    <meta name="description" content="Soutenez la BSPP en achetant nos produits officiels : écussons, vêtements, mugs et plus.">
+    
+    <!-- Tailwind & Lucide -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation (Copied for simplicity, could be injected) -->
+    <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2 font-bold text-xl tracking-wider hover:text-red-500 transition">
+                    <i data-lucide="flame" class="text-red-600 fill-red-600"></i>
+                    BSPP
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="hover:text-red-500 transition">Accueil</a>
+                    <a href="boutique.html" class="text-red-500 font-semibold">Boutique</a>
+                    <a href="histoire.html" class="hover:text-red-500 transition">Histoire</a>
+                    <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="boutique.html" class="relative group">
+                        <i data-lucide="shopping-bag" class="w-6 h-6 cart-icon-anim transition duration-300"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                    <a href="admin/login.html" class="text-gray-400 hover:text-white" title="Administration">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
+            <a href="index.html" class="block py-3 px-4 hover:bg-slate-700 hover:text-red-500">Accueil</a>
+            <a href="boutique.html" class="block py-3 px-4 text-red-500 font-semibold">Boutique</a>
+            <a href="histoire.html" class="block py-3 px-4 hover:bg-slate-700 hover:text-red-500">Histoire</a>
+            <a href="contact.html" class="block py-3 px-4 hover:bg-slate-700 hover:text-red-500">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-slate-800 py-12 text-center text-white">
+        <h1 class="text-4xl font-bold uppercase tracking-wide mb-2">Boutique Officielle</h1>
+        <p class="text-gray-400">Soutenez nos actions à travers nos produits exclusifs</p>
+    </div>
+
+    <!-- Shop Content -->
+    <main class="container mx-auto px-4 py-12 flex-grow">
+        <!-- Products Grid -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Products will be injected here via JS -->
+            <div class="col-span-full text-center py-20">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto"></div>
+                <p class="mt-4 text-gray-500">Chargement des produits...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-10 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <a href="#" class="flex items-center gap-2 font-bold text-xl text-white mb-4">
+                    <i data-lucide="flame" class="text-red-600 fill-red-600"></i>
+                    BSPP
+                </a>
+                <p class="text-sm">Brigade de Sapeurs-Pompiers de Paris.<br>Sauver ou Périr.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Navigation</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-red-500">Accueil</a></li>
+                    <li><a href="boutique.html" class="hover:text-red-500">Boutique</a></li>
+                    <li><a href="histoire.html" class="hover:text-red-500">Histoire</a></li>
+                    <li><a href="contact.html" class="hover:text-red-500">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Légal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-red-500">Mentions légales</a></li>
+                    <li><a href="#" class="hover:text-red-500">Confidentialité</a></li>
+                    <li><a href="#" class="hover:text-red-500">CGV</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Suivez-nous</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-10 pt-4 border-t border-slate-800">
+            &copy; 2025 BSPP (Projet Fictif). Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
