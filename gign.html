@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'histoire fascinante du GIGN. Depuis sa création en 1974 jusqu'aux missions les plus périlleuses comme Marignane.">
+    <title>Histoire du GIGN - Chronologie et Missions | GIGN Store</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gign: { blue: '#0a192f', light: '#1e293b', accent: '#3b82f6' },
+                        military: { gold: '#fbbf24' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #0a192f; color: #f8fafc; }
+        .gign-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1579912437766-79339e724a89?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Timeline line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #1e293b;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before { left: 50%; margin-left: -1px; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar (Consistent) -->
+    <nav class="bg-gign-blue/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 transition-all duration-300 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 bg-military-gold rounded-full flex items-center justify-center text-gign-blue font-bold shadow-lg shadow-military-gold/20 group-hover:scale-105 transition-transform duration-300">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-bold tracking-wider text-white group-hover:text-military-gold transition-colors">GIGN<span class="text-military-gold">.STORE</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-white px-3 py-2 rounded-md text-sm uppercase tracking-widest transition-all">Accueil</a>
+                        <a href="shop.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-white px-3 py-2 rounded-md text-sm uppercase tracking-widest transition-all">Boutique</a>
+                        <a href="gign.html" class="text-military-gold font-semibold px-3 py-2 rounded-md text-sm uppercase tracking-widest border-b-2 border-military-gold">Histoire</a>
+                        <a href="contact.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-white px-3 py-2 rounded-md text-sm uppercase tracking-widest transition-all">Contact</a>
+                    </div>
+                </div>
+                <!-- Panier Icon & Mobile Button -->
+                <div class="flex items-center gap-4">
+                    <button class="relative p-2 text-gray-300 hover:text-military-gold transition-colors" aria-label="Voir le panier">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span id="cart-badge" class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                    </button>
+                    
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
+                            <i data-lucide="menu" class="w-8 h-8"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gign-light border-b border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+                <a href="shop.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Boutique</a>
+                <a href="gign.html" class="text-military-gold block px-3 py-2 rounded-md text-base font-medium">Histoire</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="gign-hero py-24 border-b border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-gign-blue to-transparent"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">Forces d'Intervention</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">GIGN</h1>
+            <p class="text-2xl text-blue-400 font-light mb-8 italic">"S'engager pour la vie"</p>
+            <p class="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
+                Depuis 1974, le GIGN est l'unité d'élite spécialisée dans la gestion de crises majeures. Une histoire forgée dans l'action, le courage et l'abnégation.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-16 space-y-24">
+        
+        <!-- Intro Stats -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="bg-gign-light p-6 rounded-xl border border-white/5">
+                <div class="text-3xl font-bold text-military-gold mb-2">1974</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Création</div>
+            </div>
+            <div class="bg-gign-light p-6 rounded-xl border border-white/5">
+                <div class="text-3xl font-bold text-military-gold mb-2">1800+</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Missions</div>
+            </div>
+            <div class="bg-gign-light p-6 rounded-xl border border-white/5">
+                <div class="text-3xl font-bold text-military-gold mb-2">500+</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Otages libérés</div>
+            </div>
+            <div class="bg-gign-light p-6 rounded-xl border border-white/5">
+                <div class="text-3xl font-bold text-military-gold mb-2">400</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Opérateurs</div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="relative timeline-line">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white uppercase tracking-widest bg-gign-blue inline-block px-4 relative z-10">Chronologie</h2>
+            </div>
+
+            <!-- Event 1 -->
+            <div class="md:flex justify-between items-center w-full mb-12 relative z-10 group">
+                <div class="md:w-5/12 order-1 md:order-1 text-right pr-8 pl-12 md:pl-0">
+                    <h3 class="font-bold text-2xl text-white mb-2">Création de l'Unité</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Sous l'impulsion de Christian Prouteau, suite au massacre de Munich (1972) et à la prise d'otages de l'ambassade saoudienne (1973). Le but : disposer d'une unité capable de répondre à des menaces terroristes extrêmes.
+                    </p>
+                </div>
+                <div class="absolute left-5 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-military-gold rounded-full border-4 border-gign-blue z-20 flex items-center justify-center font-bold text-xs text-gign-blue order-1">74</div>
+                <div class="md:w-5/12 order-1 md:order-2 pl-12">
+                    <div class="bg-gign-light p-2 rounded-lg border border-white/10 shadow-lg transform group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1550358864-518f202c0209?auto=format&fit=crop&q=80&w=400" alt="GIGN 1974" class="rounded w-full h-48 object-cover opacity-80" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="md:flex justify-between items-center w-full mb-12 relative z-10 group">
+                <div class="md:w-5/12 order-1 md:order-2 text-left pl-12">
+                    <h3 class="font-bold text-2xl text-white mb-2">Loyada (Djibouti)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Prise d'otages d'un bus scolaire par le FLCS. Le GIGN effectue un tir simultané légendaire pour neutraliser les terroristes. C'est l'acte fondateur de la doctrine du groupe.
+                    </p>
+                </div>
+                <div class="absolute left-5 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gray-700 rounded-full border-4 border-gign-blue z-20 flex items-center justify-center font-bold text-xs text-white order-1">76</div>
+                <div class="md:w-5/12 order-1 md:order-1 text-right pr-8 pl-12 md:pl-0">
+                     <div class="bg-gign-light p-2 rounded-lg border border-white/10 shadow-lg transform group-hover:scale-105 transition-transform">
+                        <div class="h-48 bg-gray-800 rounded flex items-center justify-center">
+                            <i data-lucide="crosshair" class="w-12 h-12 text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="md:flex justify-between items-center w-full mb-12 relative z-10 group">
+                <div class="md:w-5/12 order-1 md:order-1 text-right pr-8 pl-12 md:pl-0">
+                    <h3 class="font-bold text-2xl text-white mb-2">Air France 8969</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        L'assaut de Marignane. 4 terroristes du GIA détournent un Airbus A300. Le GIGN donne l'assaut en direct à la télévision. 173 otages sauvés. Une opération étudiée dans le monde entier.
+                    </p>
+                </div>
+                <div class="absolute left-5 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-military-gold rounded-full border-4 border-gign-blue z-20 flex items-center justify-center font-bold text-xs text-gign-blue order-1">94</div>
+                <div class="md:w-5/12 order-1 md:order-2 pl-12">
+                    <div class="bg-gign-light p-2 rounded-lg border border-white/10 shadow-lg transform group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&q=80&w=400" alt="Avion Marignane" class="rounded w-full h-48 object-cover opacity-80" loading="lazy">
+                    </div>
+                </div>
+            </div>
+             <!-- Event 4 -->
+             <div class="md:flex justify-between items-center w-full mb-12 relative z-10 group">
+                <div class="md:w-5/12 order-1 md:order-2 text-left pl-12">
+                    <h3 class="font-bold text-2xl text-white mb-2">Dammartin-en-Goële</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Traque et neutralisation des frères Kouachi, auteurs de l'attentat contre Charlie Hebdo, retranchés dans une imprimerie. Coordination majeure avec le RAID.
+                    </p>
+                </div>
+                <div class="absolute left-5 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gray-700 rounded-full border-4 border-gign-blue z-20 flex items-center justify-center font-bold text-xs text-white order-1">15</div>
+                <div class="md:w-5/12 order-1 md:order-1 text-right pr-8 pl-12 md:pl-0">
+                     <div class="bg-gign-light p-2 rounded-lg border border-white/10 shadow-lg transform group-hover:scale-105 transition-transform">
+                        <div class="h-48 bg-gray-800 rounded flex items-center justify-center">
+                            <i data-lucide="shield-alert" class="w-12 h-12 text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anecdotes / Saviez-vous -->
+        <section class="bg-blue-900/20 rounded-2xl p-8 md:p-12 border border-white/10">
+            <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                <i data-lucide="lightbulb" class="w-6 h-6 text-military-gold"></i>
+                Le Saviez-vous ?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-bold text-military-gold mb-2">Le tir de confiance</h4>
+                    <p class="text-gray-400 text-sm">
+                        C'est une tradition lors de la formation. Une cible en argile est placée sur le gilet pare-balles d'un camarade. Le tireur doit la détruire à distance. Cela prouve la confiance absolue entre les membres du groupe.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-military-gold mb-2">Anonymat total</h4>
+                    <p class="text-gray-400 text-sm">
+                        Il est strictement interdit de divulguer le visage d'un opérationnel du GIGN. En public, ils portent toujours la cagoule. C'est une garantie de sécurité pour eux et leurs familles.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 GIGN Store.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,177 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Pompiers de Paris</title>
-    <meta name="description" content="Contactez la Brigade de Sapeurs-Pompiers de Paris pour toute demande d'information.">
+    <meta name="description" content="Contactez l'équipe de GIGN.STORE. Une question sur un produit tactique ou une commande ? Nous sommes là pour vous répondre.">
+    <title>Contact - GIGN Store</title>
     
-    <!-- Tailwind & Lucide -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/tailwind-config.js"></script><script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gign: { blue: '#0a192f', light: '#1e293b', accent: '#3b82f6' },
+                        military: { gold: '#fbbf24' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #0a192f; color: #f8fafc; }
+    </style>
 </head>
-<body class="bg-bspp-navy text-white font-sans antialiased flex flex-col min-h-screen">
-    <!-- Tricolor Strip -->
-    <div class="tricolor-border sticky top-0 z-[60]"></div>
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Navigation -->
-    <nav class="sticky top-1 z-50 bg-bspp-navy text-white shadow-xl border-b border-bspp-blue">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-bspp-red blur opacity-20 group-hover:opacity-40 transition"></div>
-                        <i data-lucide="shield" class="w-10 h-10 text-white fill-bspp-navy stroke-2 relative z-10"></i>
-                        <i data-lucide="flame" class="w-5 h-5 text-bspp-red fill-bspp-red absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"></i>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-xl tracking-widest leading-none">BSPP</span>
-                        <span class="text-[10px] text-gray-400 uppercase tracking-wider leading-none">Brigade de Sapeurs-Pompiers de Paris</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-1">
-                    <a href="index.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-bspp-blue rounded transition">Accueil</a>
-                    <a href="boutique.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-bspp-blue rounded transition">Boutique</a>
-                    <a href="histoire.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-bspp-blue rounded transition">Histoire</a>
-                    <a href="contact.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-white border-b-2 border-bspp-red bg-bspp-blue/50 rounded-t">Contact</a>
+    <!-- Navbar (Consistent) -->
+    <nav class="bg-gign-blue/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 transition-all duration-300 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 bg-military-gold rounded-full flex items-center justify-center text-gign-blue font-bold shadow-lg shadow-military-gold/20 group-hover:scale-105 transition-transform duration-300">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-bold tracking-wider text-white group-hover:text-military-gold transition-colors">GIGN<span class="text-military-gold">.STORE</span></span>
+                    </a>
                 </div>
-
-                <!-- Actions -->
-                <div class="flex items-center gap-6">
-                    <a href="boutique.html" class="relative group p-2 hover:bg-bspp-blue rounded-full transition">
-                        <i data-lucide="shopping-bag" class="w-5 h-5 text-gray-300 group-hover:text-white transition"></i>
-                        <span class="cart-count absolute top-0 right-0 bg-bspp-red text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden">0</span>
-                    </a>
-                    <a href="login.html" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-white uppercase tracking-wider transition border border-bspp-blue px-3 py-1 rounded hover:border-slate-500">
-                        <i data-lucide="lock" class="w-3 h-3"></i>
-                        Admin
-                    </a>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="md:hidden focus:outline-none p-2 text-gray-300 hover:text-white">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-white px-3 py-2 rounded-md text-sm uppercase tracking-widest transition-all">Accueil</a>
+                        <a href="shop.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-white px-3 py-2 rounded-md text-sm uppercase tracking-widest transition-all">Boutique</a>
+                        <a href="gign.html" class="text-gray-300 hover:text-white hover:border-b-2 hover:border-white px-3 py-2 rounded-md text-sm uppercase tracking-widest transition-all">Histoire</a>
+                        <a href="contact.html" class="text-military-gold font-semibold px-3 py-2 rounded-md text-sm uppercase tracking-widest border-b-2 border-military-gold">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-bspp-navy border-t border-bspp-blue">
-            <a href="index.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-bspp-blue hover:text-white border-t border-bspp-blue">Accueil</a>
-            <a href="boutique.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-bspp-blue hover:text-white border-t border-bspp-blue">Boutique</a>
-            <a href="histoire.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-bspp-blue hover:text-white border-t border-bspp-blue">Histoire</a>
-            <a href="contact.html" class="block py-4 px-6 text-sm font-bold uppercase text-bspp-red bg-bspp-blue">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-gign-light border-b border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+                <a href="shop.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Boutique</a>
+                <a href="gign.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Histoire</a>
+                <a href="contact.html" class="text-military-gold block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Header -->
-    <div class="bg-bspp-blue py-12 text-center text-white border-b border-white/5">
-        <h1 class="text-4xl font-bold uppercase tracking-wide mb-2">Contactez-nous</h1>
-        <p class="text-gray-400">Une question ? Nous sommes à votre écoute.</p>
-    </div>
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-white mb-4 uppercase tracking-widest">Contactez-nous</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">Une question sur votre commande ? Une demande spécifique ? Remplissez le formulaire ci-dessous.</p>
+        </div>
 
-    <!-- Contact Form Section -->
-    <main class="container mx-auto px-4 py-12 flex-grow">
-        <div class="max-w-2xl mx-auto bg-bspp-blue rounded-xl shadow-lg p-8 border border-white/5">
+        <div class="grid md:grid-cols-2 gap-12">
             
-            <div id="success-message" class="hidden text-center py-10">
-                <div class="w-16 h-16 bg-green-900/30 text-green-400 border border-green-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="check" class="w-8 h-8"></i>
+            <!-- Contact Info -->
+            <div class="space-y-8">
+                <div class="bg-gign-light p-8 rounded-xl border border-white/5 hover:border-military-gold/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="info" class="w-5 h-5 text-military-gold"></i> Informations
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Email</p>
+                                <p class="text-white font-medium">contact@gign.store</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Localisation</p>
+                                <p class="text-white font-medium">Paris, France</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Horaires</p>
+                                <p class="text-white font-medium">Lun - Ven : 9h - 18h</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-2">Message envoyé !</h3>
-                <p class="text-gray-400">Nous vous répondrons dans les plus brefs délais.</p>
-                <button onclick="resetForm()" class="mt-6 text-bspp-red hover:text-red-500 font-semibold underline">Envoyer un autre message</button>
+
+                <div class="bg-blue-900/20 p-8 rounded-xl border border-blue-500/20">
+                    <h3 class="text-lg font-bold text-white mb-2">FAQ Rapide</h3>
+                    <p class="text-gray-400 text-sm mb-4">La plupart des réponses se trouvent ici.</p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-military-gold"></i> Livraison en 48/72h</li>
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-military-gold"></i> Retours gratuits sous 30 jours</li>
+                        <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-military-gold"></i> Paiement sécurisé</li>
+                    </ul>
+                </div>
             </div>
 
-            <form id="contact-form" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
+            <!-- Form -->
+            <div class="bg-gign-light p-8 rounded-xl border border-white/5">
+                <form id="contact-form" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nom complet</label>
-                        <div class="relative">
-                            <i data-lucide="user" class="absolute left-3 top-3 w-5 h-5 text-gray-400"></i>
-                            <input type="text" id="name" required class="w-full pl-10 pr-4 py-2 bg-bspp-navy border border-bspp-blue-light text-white rounded-lg focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-gray-500">
-                        </div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Nom complet</label>
+                        <input type="text" required class="w-full bg-gray-800 border border-white/10 rounded-lg p-3 text-white focus:border-military-gold focus:ring-1 focus:ring-military-gold outline-none transition-all" placeholder="Votre nom">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                        <div class="relative">
-                            <i data-lucide="mail" class="absolute left-3 top-3 w-5 h-5 text-gray-400"></i>
-                            <input type="email" id="email" required class="w-full pl-10 pr-4 py-2 bg-bspp-navy border border-bspp-blue-light text-white rounded-lg focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-gray-500">
-                        </div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" required class="w-full bg-gray-800 border border-white/10 rounded-lg p-3 text-white focus:border-military-gold focus:ring-1 focus:ring-military-gold outline-none transition-all" placeholder="votre@email.com">
                     </div>
-                </div>
-
-                <div>
-                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Sujet</label>
-                    <div class="relative">
-                        <i data-lucide="help-circle" class="absolute left-3 top-3 w-5 h-5 text-gray-400"></i>
-                        <select id="subject" class="w-full pl-10 pr-4 py-2 bg-bspp-navy border border-bspp-blue-light text-white rounded-lg focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition">
-                            <option>Renseignement général</option>
-                            <option>Boutique / Commande</option>
-                            <option>Recrutement</option>
-                            <option>Presse</option>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Sujet</label>
+                        <select class="w-full bg-gray-800 border border-white/10 rounded-lg p-3 text-white focus:border-military-gold focus:ring-1 focus:ring-military-gold outline-none transition-all">
+                            <option>Information produit</option>
+                            <option>Suivi de commande</option>
+                            <option>Partenariat</option>
+                            <option>Autre</option>
                         </select>
                     </div>
-                </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <textarea required rows="4" class="w-full bg-gray-800 border border-white/10 rounded-lg p-3 text-white focus:border-military-gold focus:ring-1 focus:ring-military-gold outline-none transition-all" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-military-gold hover:bg-yellow-500 text-gign-blue font-bold rounded-lg uppercase tracking-wider transition-colors flex items-center justify-center gap-2 group">
+                        <span>Envoyer le message</span>
+                        <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </form>
 
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                    <textarea id="message" rows="5" required class="w-full p-4 bg-bspp-navy border border-bspp-blue-light text-white rounded-lg focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-gray-500"></textarea>
+                <!-- Success Message (Hidden by default) -->
+                <div id="success-message" class="hidden mt-6 bg-green-900/30 border border-green-500/50 rounded-lg p-4 text-center">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="check" class="w-6 h-6 text-green-500"></i>
+                    </div>
+                    <h4 class="text-white font-bold">Message envoyé !</h4>
+                    <p class="text-green-300 text-sm">Nous vous répondrons dans les plus brefs délais.</p>
                 </div>
+            </div>
 
-                <button type="submit" id="submit-btn" class="w-full bg-bspp-red hover:bg-bspp-red-dark text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center gap-2">
-                    <span>Envoyer le message</span>
-                    <i data-lucide="send" class="w-5 h-5"></i>
-                </button>
-            </form>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-bspp-navy text-gray-400 py-10 border-t border-bspp-blue mt-auto">
-        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
-            <div>
-                <a href="#" class="flex items-center gap-2 font-bold text-xl text-white mb-4">
-                    <i data-lucide="flame" class="text-bspp-red fill-bspp-red"></i>
-                    BSPP
-                </a>
-                <p class="text-sm">Brigade de Sapeurs-Pompiers de Paris.<br>Sauver ou Périr.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Navigation</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-bspp-red">Accueil</a></li>
-                    <li><a href="boutique.html" class="hover:text-bspp-red">Boutique</a></li>
-                    <li><a href="histoire.html" class="hover:text-bspp-red">Histoire</a></li>
-                    <li><a href="contact.html" class="hover:text-bspp-red">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Légal</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-bspp-red">Mentions légales</a></li>
-                    <li><a href="#" class="hover:text-bspp-red">Confidentialité</a></li>
-                    <li><a href="#" class="hover:text-bspp-red">CGV</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Suivez-nous</h4>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="#" class="hover:text-white"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                    <a href="#" class="hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-xs mt-10 pt-4 border-t border-bspp-blue">
-            &copy; 2025 BSPP (Projet Fictif). Tous droits réservés.
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 GIGN Store.</p>
         </div>
     </footer>
+    
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2"></div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Form Handling
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulation d'envoi
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Envoi...';
+            lucide.createIcons();
+
+            setTimeout(() => {
+                e.target.classList.add('hidden');
+                document.getElementById('success-message').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
-
-

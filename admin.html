@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - GIGN Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gign: {
+                            blue: '#0a192f',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                        },
+                        military: {
+                            gold: '#fbbf24',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #0a192f; color: #f8fafc; }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-md p-8 bg-gign-light rounded-xl border border-white/10 shadow-2xl">
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-military-gold rounded-full flex items-center justify-center text-gign-blue mx-auto mb-4">
+                <i data-lucide="shield-alert" class="w-8 h-8"></i>
+            </div>
+            <h1 class="text-2xl font-bold text-white uppercase tracking-wider">Accès Réservé</h1>
+            <p class="text-gray-400 mt-2">Zone d'administration GIGN.STORE</p>
+        </div>
+
+        <form id="login-form" class="space-y-6">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-300">Identifiant</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i data-lucide="user" class="h-5 w-5 text-gray-500"></i>
+                    </div>
+                    <input type="text" id="username" class="bg-gray-800 border border-white/10 text-white sm:text-sm rounded-lg focus:ring-military-gold focus:border-military-gold block w-full pl-10 p-2.5" placeholder="admin">
+                </div>
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-300">Mot de passe</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i data-lucide="lock" class="h-5 w-5 text-gray-500"></i>
+                    </div>
+                    <input type="password" id="password" class="bg-gray-800 border border-white/10 text-white sm:text-sm rounded-lg focus:ring-military-gold focus:border-military-gold block w-full pl-10 p-2.5" placeholder="••••••••">
+                </div>
+            </div>
+
+            <div id="error-msg" class="text-red-500 text-sm text-center hidden">
+                Identifiants incorrects.
+            </div>
+
+            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-gign-blue bg-military-gold hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-military-gold transition-colors uppercase tracking-wider font-bold">
+                Connexion
+            </button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="index.html" class="text-gray-500 hover:text-gray-300 text-sm flex items-center justify-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Retour au site
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            
+            if (db.login(u, p)) {
+                window.location.href = 'dashboard.html';
+            } else {
+                document.getElementById('error-msg').classList.remove('hidden');
+            }
+        });
+        
+        // Rediriger si déjà connecté
+        if(db.isLogged()) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
