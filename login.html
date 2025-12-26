@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Administration - BSPP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script><script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="login-bg text-slate-900 font-sans antialiased min-h-screen flex items-center justify-center p-4">
+<body class="login-bg text-white font-sans antialiased min-h-screen flex items-center justify-center p-4">
 
-    <div class="bg-white/95 backdrop-blur rounded-lg shadow-2xl w-full max-w-md overflow-hidden border border-slate-700/50">
-        <div class="bg-slate-900 p-8 text-center relative overflow-hidden">
+    <div class="bg-bspp-blue/95 backdrop-blur rounded-lg shadow-2xl w-full max-w-md overflow-hidden border border-white/10">
+        <div class="bg-bspp-navy p-8 text-center relative overflow-hidden">
             <!-- Decorative line -->
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-white to-red-600"></div>
             
             <div class="relative z-10">
                 <div class="inline-flex items-center justify-center p-4 bg-white/5 rounded-full mb-4 ring-1 ring-white/10">
-                    <i data-lucide="shield" class="w-12 h-12 text-white fill-slate-800"></i>
+                    <i data-lucide="shield" class="w-12 h-12 text-white fill-bspp-navy"></i>
                 </div>
                 <h1 class="text-xl font-bold text-white uppercase tracking-[0.2em]">Portail Administration</h1>
                 <p class="text-slate-400 text-xs mt-2 uppercase tracking-widest">Brigade de Sapeurs-Pompiers de Paris</p>
@@ -29,7 +29,7 @@
         
         <div class="p-8 pt-10">
             <form id="login-form" class="space-y-6">
-                <div id="error-msg" class="hidden bg-red-50 border-l-4 border-red-600 text-red-700 px-4 py-3 text-sm rounded shadow-sm" role="alert">
+                <div id="error-msg" class="hidden bg-red-900/30 border-l-4 border-bspp-red text-red-400 px-4 py-3 text-sm rounded shadow-sm" role="alert">
                     <div class="flex items-center gap-2">
                         <i data-lucide="alert-circle" class="w-4 h-4"></i>
                         <span class="font-bold">Erreur d'authentification</span>
@@ -38,46 +38,46 @@
 
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-slate-600 text-xs font-bold mb-2 uppercase tracking-wide" for="username">
+                        <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wide" for="username">
                             Identifiant
                         </label>
                         <div class="relative group">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i data-lucide="user" class="h-5 w-5 text-slate-400 group-focus-within:text-red-600 transition"></i>
+                                <i data-lucide="user" class="h-5 w-5 text-slate-400 group-focus-within:text-bspp-red transition"></i>
                             </div>
-                            <input class="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition text-sm bg-slate-50 focus:bg-white" id="username" type="text" placeholder="Matricule ou identifiant">
+                            <input class="block w-full pl-10 pr-3 py-3 border border-white/10 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-bspp-red focus:border-transparent transition text-sm bg-bspp-navy focus:bg-bspp-navy/80" id="username" type="text" placeholder="Matricule ou identifiant">
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-slate-600 text-xs font-bold mb-2 uppercase tracking-wide" for="password">
+                        <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wide" for="password">
                             Mot de passe
                         </label>
                         <div class="relative group">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i data-lucide="lock" class="h-5 w-5 text-slate-400 group-focus-within:text-red-600 transition"></i>
+                                <i data-lucide="lock" class="h-5 w-5 text-slate-400 group-focus-within:text-bspp-red transition"></i>
                             </div>
-                            <input class="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition text-sm bg-slate-50 focus:bg-white" id="password" type="password" placeholder="••••••••">
+                            <input class="block w-full pl-10 pr-3 py-3 border border-white/10 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-bspp-red focus:border-transparent transition text-sm bg-bspp-navy focus:bg-bspp-navy/80" id="password" type="password" placeholder="••••••••">
                         </div>
                     </div>
                 </div>
                 
                 <div class="pt-2">
-                    <button class="w-full bg-slate-900 hover:bg-red-600 text-white font-bold py-3 px-4 rounded shadow-lg transform active:scale-[0.98] transition duration-200 flex items-center justify-center gap-2 group" type="submit">
+                    <button class="w-full bg-bspp-navy hover:bg-bspp-red text-white font-bold py-3 px-4 rounded shadow-lg transform active:scale-[0.98] transition duration-200 flex items-center justify-center gap-2 group" type="submit">
                         <span>Connexion Sécurisée</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </button>
                 </div>
 
                 <div class="text-center mt-6">
-                    <a href="index.html" class="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-slate-600 transition border-b border-transparent hover:border-slate-300 pb-0.5">
+                    <a href="index.html" class="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-white transition border-b border-transparent hover:border-slate-300 pb-0.5">
                         <i data-lucide="arrow-left" class="w-3 h-3"></i>
                         Retour au site public
                     </a>
                 </div>
             </form>
         </div>
-        <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 text-center">
+        <div class="bg-bspp-navy/30 px-8 py-4 border-t border-white/5 text-center">
             <p class="text-[10px] text-slate-400 uppercase tracking-widest">Accès réservé au personnel autorisé</p>
         </div>
     </div>
@@ -86,3 +86,5 @@
     <script src="js/admin.js"></script>
 </body>
 </html>
+
+
