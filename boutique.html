@@ -8,23 +8,23 @@
     
     <!-- Tailwind & Lucide -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="tailwind-config.js"></script><script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-bspp-navy text-white font-sans antialiased flex flex-col min-h-screen">
     <!-- Tricolor Strip -->
     <div class="tricolor-border sticky top-0 z-[60]"></div>
 
     <!-- Navigation -->
-    <nav class="sticky top-1 z-50 bg-slate-900 text-white shadow-xl border-b border-slate-800">
+    <nav class="sticky top-1 z-50 bg-bspp-navy text-white shadow-xl border-b border-bspp-blue">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-red-600 blur opacity-20 group-hover:opacity-40 transition"></div>
-                        <i data-lucide="shield" class="w-10 h-10 text-white fill-slate-800 stroke-2 relative z-10"></i>
-                        <i data-lucide="flame" class="w-5 h-5 text-red-600 fill-red-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"></i>
+                        <div class="absolute inset-0 bg-bspp-red blur opacity-20 group-hover:opacity-40 transition"></div>
+                        <i data-lucide="shield" class="w-10 h-10 text-white fill-bspp-navy stroke-2 relative z-10"></i>
+                        <i data-lucide="flame" class="w-5 h-5 text-bspp-red fill-bspp-red absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"></i>
                     </div>
                     <div class="flex flex-col">
                         <span class="font-bold text-xl tracking-widest leading-none">BSPP</span>
@@ -34,19 +34,19 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-1">
-                    <a href="index.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-slate-800 rounded transition">Accueil</a>
-                    <a href="boutique.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-white border-b-2 border-red-600 bg-slate-800/50 rounded-t">Boutique</a>
-                    <a href="histoire.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-slate-800 rounded transition">Histoire</a>
-                    <a href="contact.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-slate-800 rounded transition">Contact</a>
+                    <a href="index.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-bspp-blue rounded transition">Accueil</a>
+                    <a href="boutique.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-white border-b-2 border-bspp-red bg-bspp-blue/50 rounded-t">Boutique</a>
+                    <a href="histoire.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-bspp-blue rounded transition">Histoire</a>
+                    <a href="contact.html" class="px-4 py-2 text-sm font-bold uppercase tracking-wide text-gray-300 hover:text-white hover:bg-bspp-blue rounded transition">Contact</a>
                 </div>
 
                 <!-- Actions -->
                 <div class="flex items-center gap-6">
-                    <a href="boutique.html" class="relative group p-2 hover:bg-slate-800 rounded-full transition">
+                    <a href="boutique.html" class="relative group p-2 hover:bg-bspp-blue rounded-full transition">
                         <i data-lucide="shopping-bag" class="w-5 h-5 text-gray-300 group-hover:text-white transition"></i>
-                        <span class="cart-count absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden">0</span>
+                        <span class="cart-count absolute top-0 right-0 bg-bspp-red text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden">0</span>
                     </a>
-                    <a href="login.html" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-white uppercase tracking-wider transition border border-slate-700 px-3 py-1 rounded hover:border-slate-500">
+                    <a href="login.html" class="flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-white uppercase tracking-wider transition border border-bspp-blue px-3 py-1 rounded hover:border-slate-500">
                         <i data-lucide="lock" class="w-3 h-3"></i>
                         Admin
                     </a>
@@ -58,16 +58,16 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
-            <a href="index.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-slate-800 hover:text-white border-t border-slate-800">Accueil</a>
-            <a href="boutique.html" class="block py-4 px-6 text-sm font-bold uppercase text-red-500 bg-slate-800">Boutique</a>
-            <a href="histoire.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-slate-800 hover:text-white border-t border-slate-800">Histoire</a>
-            <a href="contact.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-slate-800 hover:text-white border-t border-slate-800">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-bspp-navy border-t border-bspp-blue">
+            <a href="index.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-bspp-blue hover:text-white border-t border-bspp-blue">Accueil</a>
+            <a href="boutique.html" class="block py-4 px-6 text-sm font-bold uppercase text-bspp-red bg-bspp-blue">Boutique</a>
+            <a href="histoire.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-bspp-blue hover:text-white border-t border-bspp-blue">Histoire</a>
+            <a href="contact.html" class="block py-4 px-6 text-sm font-bold uppercase text-gray-300 hover:bg-bspp-blue hover:text-white border-t border-bspp-blue">Contact</a>
         </div>
     </nav>
 
     <!-- Header -->
-    <div class="bg-slate-800 py-12 text-center text-white">
+    <div class="bg-bspp-blue py-12 text-center text-white border-b border-white/5">
         <h1 class="text-4xl font-bold uppercase tracking-wide mb-2">Boutique Officielle</h1>
         <p class="text-gray-400">Soutenez nos actions à travers nos produits exclusifs</p>
     </div>
@@ -78,18 +78,18 @@
         <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <!-- Products will be injected here via JS -->
             <div class="col-span-full text-center py-20">
-                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto"></div>
-                <p class="mt-4 text-gray-500">Chargement des produits...</p>
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-bspp-red mx-auto"></div>
+                <p class="mt-4 text-gray-400">Chargement des produits...</p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-gray-400 py-10 border-t border-slate-800 mt-auto">
+    <footer class="bg-bspp-navy text-gray-400 py-10 border-t border-bspp-blue mt-auto">
         <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
             <div>
                 <a href="#" class="flex items-center gap-2 font-bold text-xl text-white mb-4">
-                    <i data-lucide="flame" class="text-red-600 fill-red-600"></i>
+                    <i data-lucide="flame" class="text-bspp-red fill-bspp-red"></i>
                     BSPP
                 </a>
                 <p class="text-sm">Brigade de Sapeurs-Pompiers de Paris.<br>Sauver ou Périr.</p>
@@ -97,18 +97,18 @@
             <div>
                 <h4 class="text-white font-bold mb-4">Navigation</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-red-500">Accueil</a></li>
-                    <li><a href="boutique.html" class="hover:text-red-500">Boutique</a></li>
-                    <li><a href="histoire.html" class="hover:text-red-500">Histoire</a></li>
-                    <li><a href="contact.html" class="hover:text-red-500">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-bspp-red">Accueil</a></li>
+                    <li><a href="boutique.html" class="hover:text-bspp-red">Boutique</a></li>
+                    <li><a href="histoire.html" class="hover:text-bspp-red">Histoire</a></li>
+                    <li><a href="contact.html" class="hover:text-bspp-red">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-bold mb-4">Légal</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-red-500">Mentions légales</a></li>
-                    <li><a href="#" class="hover:text-red-500">Confidentialité</a></li>
-                    <li><a href="#" class="hover:text-red-500">CGV</a></li>
+                    <li><a href="#" class="hover:text-bspp-red">Mentions légales</a></li>
+                    <li><a href="#" class="hover:text-bspp-red">Confidentialité</a></li>
+                    <li><a href="#" class="hover:text-bspp-red">CGV</a></li>
                 </ul>
             </div>
             <div>
@@ -120,13 +120,13 @@
                 </div>
             </div>
         </div>
-        <div class="text-center text-xs mt-10 pt-4 border-t border-slate-800">
+        <div class="text-center text-xs mt-10 pt-4 border-t border-bspp-blue">
             &copy; 2025 BSPP (Projet Fictif). Tous droits réservés.
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/shop.js"></script>
+    <script src="main.js"></script>
+    <script src="shop.js"></script>
 </body>
 </html>
