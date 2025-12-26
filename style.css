@@ -3,11 +3,30 @@
 /* Base Typography */
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #0B132B; /* Deep Navy Background */
+    color: #F8FAFC; /* Light Text */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
+
+/* BSPP Dark Theme Palette */
+:root {
+    --bspp-navy: #0B132B;
+    --bspp-blue: #1C2541;
+    --bspp-blue-light: #3A506B;
+    --bspp-red: #CE2029;
+    --bspp-red-dark: #8B0000;
+}
+
+/* Utility Classes for Dark Theme */
+.bg-bspp-navy { background-color: var(--bspp-navy); }
+.bg-bspp-blue { background-color: var(--bspp-blue); }
+.bg-bspp-red { background-color: var(--bspp-red); }
+.text-bspp-red { color: var(--bspp-red); }
+.border-bspp-blue { border-color: var(--bspp-blue); }
+.border-bspp-red { border-color: var(--bspp-red); }
 
 /* Animations */
 @keyframes fadeInUp {
