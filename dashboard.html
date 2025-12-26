@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de Bord - BSPP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script><script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-bspp-navy text-white font-sans antialiased min-h-screen flex flex-col">
 
     <!-- Navbar -->
-    <nav class="bg-slate-900 text-white shadow-lg z-50">
+    <nav class="bg-bspp-navy text-white shadow-lg z-50 border-b border-white/10">
         <div class="container mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="bg-white/10 p-1.5 rounded">
-                    <i data-lucide="shield" class="text-white fill-slate-800 w-6 h-6"></i>
+                    <i data-lucide="shield" class="text-white fill-bspp-navy w-6 h-6"></i>
                 </div>
                 <div>
                     <span class="block font-bold text-lg leading-none tracking-wide">ADMINISTRATION</span>
@@ -27,8 +27,8 @@
                     <i data-lucide="external-link" class="w-3 h-3"></i>
                     Voir le site
                 </a>
-                <div class="h-6 w-px bg-slate-700"></div>
-                <button onclick="logout()" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition shadow-lg shadow-red-900/20">
+                <div class="h-6 w-px bg-white/10"></div>
+                <button onclick="logout()" class="flex items-center gap-2 bg-bspp-red hover:bg-bspp-red-dark px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition shadow-lg shadow-red-900/20">
                     <i data-lucide="log-out" class="w-3 h-3"></i> Déconnexion
                 </button>
             </div>
@@ -41,34 +41,34 @@
         <!-- Header -->
         <div class="mb-8 flex items-center justify-between">
             <div>
-                <h1 class="text-2xl font-bold text-slate-800 uppercase tracking-tight">Vue d'ensemble</h1>
-                <p class="text-slate-500 text-sm">Gérez les produits et les stocks de la boutique officielle.</p>
+                <h1 class="text-2xl font-bold text-white uppercase tracking-tight">Vue d'ensemble</h1>
+                <p class="text-slate-400 text-sm">Gérez les produits et les stocks de la boutique officielle.</p>
             </div>
             <div class="flex gap-2">
-                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full uppercase tracking-wide">En ligne</span>
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 border border-green-500/30 text-xs font-bold rounded-full uppercase tracking-wide">En ligne</span>
             </div>
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
             <!-- Add Product Form -->
             <div class="lg:col-span-1">
-                <div class="bg-white rounded border border-slate-200 shadow-sm p-6 sticky top-8">
-                    <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-2 border-b border-slate-100 pb-2">
-                        <i data-lucide="plus-circle" class="text-red-600 w-4 h-4"></i> Nouveau Produit
+                <div class="bg-bspp-blue rounded border border-white/10 shadow-lg p-6 sticky top-8">
+                    <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-2 border-b border-white/10 pb-2">
+                        <i data-lucide="plus-circle" class="text-bspp-red w-4 h-4"></i> Nouveau Produit
                     </h2>
                     <form id="add-product-form" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">Nom du produit</label>
-                            <input type="text" id="p-name" required class="w-full bg-slate-50 border border-slate-200 rounded p-2.5 text-sm focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition placeholder-slate-400" placeholder="ex: Casque F1">
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Nom du produit</label>
+                            <input type="text" id="p-name" required class="w-full bg-bspp-navy border border-white/10 rounded p-2.5 text-sm text-white focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-slate-600" placeholder="ex: Casque F1">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">Prix (€)</label>
-                                <input type="number" id="p-price" required min="0" step="0.01" class="w-full bg-slate-50 border border-slate-200 rounded p-2.5 text-sm focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition" placeholder="0.00">
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Prix (€)</label>
+                                <input type="number" id="p-price" required min="0" step="0.01" class="w-full bg-bspp-navy border border-white/10 rounded p-2.5 text-sm text-white focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-slate-600" placeholder="0.00">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">Catégorie</label>
-                                <select id="p-category" class="w-full bg-slate-50 border border-slate-200 rounded p-2.5 text-sm focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition">
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Catégorie</label>
+                                <select id="p-category" class="w-full bg-bspp-navy border border-white/10 rounded p-2.5 text-sm text-white focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition">
                                     <option>Accessoires</option>
                                     <option>Vêtements</option>
                                     <option>Maison</option>
@@ -78,21 +78,21 @@
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">Icône <span class="text-slate-400 font-normal normal-case">(Lucide name)</span></label>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Icône <span class="text-slate-600 font-normal normal-case">(Lucide name)</span></label>
                             <div class="relative">
-                                <i data-lucide="image" class="absolute left-3 top-2.5 w-4 h-4 text-slate-400"></i>
-                                <input type="text" id="p-icon" required placeholder="shield, shirt, coffee..." class="w-full bg-slate-50 border border-slate-200 rounded p-2.5 pl-10 text-sm focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition">
+                                <i data-lucide="image" class="absolute left-3 top-2.5 w-4 h-4 text-slate-500"></i>
+                                <input type="text" id="p-icon" required placeholder="shield, shirt, coffee..." class="w-full bg-bspp-navy border border-white/10 rounded p-2.5 pl-10 text-sm text-white focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-slate-600">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">Description</label>
-                            <textarea id="p-desc" required rows="3" class="w-full bg-slate-50 border border-slate-200 rounded p-2.5 text-sm focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition placeholder-slate-400" placeholder="Courte description du produit..."></textarea>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Description</label>
+                            <textarea id="p-desc" required rows="3" class="w-full bg-bspp-navy border border-white/10 rounded p-2.5 text-sm text-white focus:ring-2 focus:ring-bspp-red focus:border-transparent outline-none transition placeholder-slate-600" placeholder="Courte description du produit..."></textarea>
                         </div>
                         <div class="flex items-center gap-2 py-2">
-                            <input type="checkbox" id="p-popular" class="rounded text-red-600 focus:ring-red-600 w-4 h-4 border-slate-300 cursor-pointer">
-                            <label for="p-popular" class="text-sm font-medium text-slate-700 cursor-pointer select-none">Marquer comme "Populaire"</label>
+                            <input type="checkbox" id="p-popular" class="rounded text-bspp-red focus:ring-bspp-red w-4 h-4 border-white/10 bg-bspp-navy cursor-pointer">
+                            <label for="p-popular" class="text-sm font-medium text-slate-300 cursor-pointer select-none">Marquer comme "Populaire"</label>
                         </div>
-                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm uppercase tracking-wide py-3 rounded shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 group">
+                        <button type="submit" class="w-full bg-bspp-red hover:bg-bspp-red-dark text-white font-bold text-sm uppercase tracking-wide py-3 rounded shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 group">
                             <i data-lucide="save" class="w-4 h-4"></i>
                             Enregistrer le produit
                         </button>
@@ -102,27 +102,27 @@
 
             <!-- Product List -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded border border-slate-200 shadow-sm overflow-hidden">
-                    <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                <div class="bg-bspp-blue rounded border border-white/10 shadow-lg overflow-hidden">
+                    <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
                         <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                            <i data-lucide="package" class="text-slate-900 w-4 h-4"></i> Inventaire
+                            <i data-lucide="package" class="text-white w-4 h-4"></i> Inventaire
                         </h2>
                         <div class="relative">
-                            <input type="text" placeholder="Rechercher..." class="text-xs border border-slate-200 rounded-full px-3 py-1.5 w-48 focus:outline-none focus:border-red-400 transition">
-                            <i data-lucide="search" class="w-3 h-3 text-slate-400 absolute right-3 top-2"></i>
+                            <input type="text" placeholder="Rechercher..." class="text-xs bg-bspp-navy border border-white/10 text-white rounded-full px-3 py-1.5 w-48 focus:outline-none focus:border-bspp-red transition placeholder-slate-600">
+                            <i data-lucide="search" class="w-3 h-3 text-slate-500 absolute right-3 top-2"></i>
                         </div>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
                             <thead>
-                                <tr class="bg-slate-50 text-slate-500 text-xs font-bold uppercase tracking-wider border-b border-slate-200">
-                                    <th class="p-4 font-bold text-slate-700">Produit</th>
-                                    <th class="p-4 font-bold text-slate-700">Catégorie</th>
-                                    <th class="p-4 font-bold text-slate-700">Prix</th>
-                                    <th class="p-4 font-bold text-slate-700 text-right">Actions</th>
+                                <tr class="bg-bspp-navy/50 text-slate-400 text-xs font-bold uppercase tracking-wider border-b border-white/10">
+                                    <th class="p-4 font-bold">Produit</th>
+                                    <th class="p-4 font-bold">Catégorie</th>
+                                    <th class="p-4 font-bold">Prix</th>
+                                    <th class="p-4 font-bold text-right">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="admin-products-list" class="divide-y divide-slate-100 text-sm">
+                            <tbody id="admin-products-list" class="divide-y divide-white/5 text-sm text-slate-300">
                                 <!-- Products injected here -->
                             </tbody>
                         </table>
@@ -133,7 +133,7 @@
 
     </main>
     
-    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800 mt-auto">
+    <footer class="bg-bspp-navy text-slate-500 py-6 text-center text-xs border-t border-white/10 mt-auto">
         <p>&copy; 2025 BSPP Administration. Usage interne uniquement.</p>
     </footer>
 
@@ -141,3 +141,5 @@
     <script src="js/admin.js"></script>
 </body>
 </html>
+
+
