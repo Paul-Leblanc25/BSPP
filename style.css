@@ -39,21 +39,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Custom Backgrounds */
 .hero-bg {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1555616635-64018d390a5e?q=80&w=1920');
+    background-image: linear-gradient(rgba(11, 19, 43, 0.7), rgba(11, 19, 43, 0.9)), url('https://images.unsplash.com/photo-1555616635-64018d390a5e?q=80&w=1920');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
 }
 
 .login-bg {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1599831932975-523190897d2e?q=80&w=1920');
+    background-image: linear-gradient(rgba(11, 19, 43, 0.9), rgba(11, 19, 43, 0.98)), url('https://images.unsplash.com/photo-1599831932975-523190897d2e?q=80&w=1920');
     background-size: cover;
     background-position: center;
 }
 
 /* Tricolor Accent */
 .tricolor-border, .tricolor-strip {
-    background: linear-gradient(90deg, #002654 33%, #FFFFFF 33%, #FFFFFF 66%, #ED2939 66%);
+    background: linear-gradient(90deg, #0B132B 33%, #FFFFFF 33%, #FFFFFF 66%, #CE2029 66%);
     height: 4px;
     width: 100%;
 }
